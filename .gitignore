@@ -1,0 +1,20 @@
+# Skills instaladas de terceiros. São reinstaláveis a partir do skills-lock.json
+# com `npx skills add`, então não precisam entrar no histórico.
+.claude/skills/
+.agents/
+
+# Dependências e build
+node_modules/
+.next/
+out/
+build/
+
+# Variáveis de ambiente — a chave Pix nunca vai para o repositório.
+.env
+.env.*
+!.env.example
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log

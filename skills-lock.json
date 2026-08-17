@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "brand": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/brand/SKILL.md",
+      "computedHash": "bd65dbd8de679805d1ad740c74a41b4f831d08ff0240390a7ed2947c62a896b9"
+    },
+    "designing-beautiful-websites": {
+      "source": "tristanmanchester/agent-skills",
+      "sourceType": "github",
+      "skillPath": "designing-beautiful-websites/SKILL.md",
+      "computedHash": "8c5bd91e0a85c9dd07de4a2b42378020603ce878065ccb382b621004e1e15f62"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "computedHash": "b146008599c31057cef1c145774cea5d5afb30e8f43fa802e47a4b461419aaaf"
+    },
+    "framer-motion": {
+      "source": "mindrally/skills",
+      "sourceType": "github",
+      "skillPath": "framer-motion/SKILL.md",
+      "computedHash": "4bbfec771a1a13e3462cdd30c442fd09513c50d13a2652a275a8e09ad4532189"
+    },
+    "seo-maps": {
+      "source": "agricidaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo-maps/SKILL.md",
+      "computedHash": "9c2ad1181b8769650e8c5d75c5414011cdb6c02bcbacc40647465c636b880776"
+    },
+    "shadcn-ui": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-kit-typescript/skills/shadcn-ui/SKILL.md",
+      "computedHash": "5264d0399edb2e9cb517c722067fea44657a35ece43407a3aaa9e3ba9bd7f670"
+    }
+  }
+}

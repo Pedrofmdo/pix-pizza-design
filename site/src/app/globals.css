@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/*
+  Paleta amostrada das artes oficiais da Pix Pizza (Instagram @pix.pizza).
+  O vermelho #f80018 é literalmente a cor dominante dos posts da marca.
+  Vermelho, preto e branco — o padrão deles, nada além disso.
+*/
+@theme {
+  --color-pix: #f80018;
+  --color-pix-fundo: #c80008;
+  /*
+    Clareado do vermelho da marca, usado só em texto pequeno sobre fundo
+    escuro: no #f80018 puro um rótulo de 11px fica em 4,4:1 e reprova no AA.
+  */
+  --color-pix-claro: #ff4d5e;
+  --color-sala: #0a0708;
+  --color-fumaca: #16100f;
+  --color-tela: #f8f8f8;
+  --color-poeira: #8d8180;
+
+  --font-display: var(--fonte-display), "Arial Black", sans-serif;
+  --font-sans: var(--fonte-corpo), system-ui, sans-serif;
+  --font-mono: var(--fonte-codigo), ui-monospace, monospace;
+
+  --animate-pulso: pulso 2.4s ease-in-out infinite;
+}
+
+@keyframes pulso {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.88);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-sala);
+  /* O site é escuro sempre: avisa o navegador para pintar barras de rolagem
+     e controles nativos no tom certo. */
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-sala);
+  color: var(--color-tela);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  /* Corta o atraso de 300ms no toque e o flash cinza do Android. */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-pix);
+  color: var(--color-tela);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-tela);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@layer components {
+  /*
+    O balão de fala é o logo da Pix Pizza — é ele que estrutura a página.
+    A rabicha é um triângulo real na borda de baixo, não uma borda desenhada,
+    para o balão continuar correto em qualquer largura.
+  */
+  .balao {
+    position: relative;
+    border-radius: 1.35rem;
+  }
+
+  .balao::after {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    bottom: -0.7rem;
+    width: 0;
+    height: 0;
+    border-left: 0.9rem solid transparent;
+    border-right: 0.9rem solid transparent;
+    border-top: 0.75rem solid var(--cor-balao, var(--color-pix));
+  }
+
+  .balao-direita::after {
+    left: auto;
+    right: 2rem;
+  }
+
+  /*
+    Tratamento cinematográfico das fotos: pretos mais fundos, cor mais densa
+    e uma queda de luz nas bordas. É o que separa foto de feed de foto de
+    campanha — sem mexer nas cores da marca.
+  */
+  .cine {
+    filter: contrast(1.12) saturate(1.14) brightness(0.94);
+  }
+
+  .cine-vinheta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        ellipse at center,
+        transparent 42%,
+        rgb(10 7 8 / 0.55) 100%
+      ),
+      linear-gradient(to top, rgb(10 7 8 / 0.85), transparent 55%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
