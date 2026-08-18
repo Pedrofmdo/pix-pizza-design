@@ -75,16 +75,16 @@ export function Abertura() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
-                href="#montar"
+                href="#combos"
                 className="bg-pix-fundo px-7 py-4 text-center font-display text-lg tracking-wide text-tela transition-transform hover:-translate-y-0.5 hover:bg-pix"
               >
-                MONTAR MINHA PIZZA
+                VER OS COMBOS
               </a>
               <a
-                href="#combos"
+                href="#montar"
                 className="border border-tela/40 px-7 py-4 text-center font-display text-lg tracking-wide text-tela transition-colors hover:border-tela hover:bg-tela hover:text-sala"
               >
-                VER OS COMBOS
+                MONTAR MINHA PIZZA
               </a>
             </div>
 

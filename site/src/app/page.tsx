@@ -1,7 +1,7 @@
 import { Cabecalho } from "@/components/Cabecalho";
 import { Abertura } from "@/components/Abertura";
-import { Montar } from "@/components/Montar";
 import { Combos } from "@/components/Combos";
+import { Montar } from "@/components/Montar";
 import { Faixa } from "@/components/Faixa";
 import { ACasa } from "@/components/ACasa";
 import { Onde } from "@/components/Onde";
@@ -15,8 +15,8 @@ export default function Home() {
       <Cabecalho />
       <main className="flex-1 pb-20 lg:pb-0">
         <Abertura />
-        <Montar />
         <Combos />
+        <Montar />
         <Faixa
           src="/img/ig-11.jpg"
           alt="Fatias de pizza sendo divididas entre amigos na Pix Pizza"

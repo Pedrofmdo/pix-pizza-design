@@ -97,7 +97,7 @@ export function Montar() {
       <div className="mx-auto max-w-6xl">
         <Revelar>
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-pix-claro">
-            Passo 1
+            Ou monte do seu jeito
           </p>
           <h2 className="mt-3 font-display text-[clamp(2.2rem,6vw,3.6rem)] leading-none">
             MONTE A SUA

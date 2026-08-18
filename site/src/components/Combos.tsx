@@ -24,7 +24,7 @@ export function Combos() {
       <div className="mx-auto max-w-6xl">
         <Revelar>
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-pix-claro">
-            Ou vá direto ao ponto
+            O jeito mais rápido
           </p>
           <h2 className="mt-3 font-display text-[clamp(2.2rem,6vw,3.6rem)] leading-none">
             COMBOS FECHADOS

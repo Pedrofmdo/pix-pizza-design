@@ -6,8 +6,8 @@ import { EstaAberto } from "./EstaAberto";
 import { useCarrinho } from "./carrinho/contexto";
 
 const secoes = [
-  { href: "#montar", rotulo: "Montar" },
   { href: "#combos", rotulo: "Combos" },
+  { href: "#montar", rotulo: "Montar" },
   { href: "#casa", rotulo: "A casa" },
   { href: "#onde", rotulo: "Onde estamos" },
 ];
