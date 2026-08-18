@@ -24,7 +24,9 @@ const codigo = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
-const site = "https://pixpizza.com.br";
+/* Endereço provisório na Vercel. Trocar aqui quando o domínio próprio entrar —
+   canonical, Open Graph e o schema Restaurant saem todos deste valor. */
+const site = "https://pix-pizza.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site),

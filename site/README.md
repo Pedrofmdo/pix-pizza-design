@@ -99,8 +99,10 @@ de campanha sem mexer nas cores da marca.
    originais em alta.
 5. **Cardápio.** São 15 sabores no site de uma lista de mais de 80. Vale ampliar
    `sabores` em `src/data/pixpizza.ts` com os que mais vendem.
-6. **Domínio.** `src/app/layout.tsx` aponta para `https://pixpizza.com.br`.
-   Confirme antes de publicar — canonical e Open Graph dependem disso.
+6. **Domínio.** O site está no ar em `https://pix-pizza.vercel.app` e é para lá
+   que `src/app/layout.tsx` aponta. Quando o domínio próprio da pizzaria entrar,
+   troque a constante `site` no `layout.tsx` e adicione o domínio no projeto da
+   Vercel — canonical, Open Graph e o schema `Restaurant` dependem disso.
 
 ## Acessibilidade
 
