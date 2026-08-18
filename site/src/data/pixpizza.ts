@@ -102,9 +102,12 @@ export const formasPagamento: {
  * Links
  * ------------------------------------------------------------------ */
 
+/*
+  Sem `whatsapp`/`whatsappNumero` de propósito. Este é um protótipo não
+  autorizado: se o link existir aqui, uma tela nova volta a mandar pedido de
+  mentira para o número real da pizzaria. Não recolocar sem autorização dela.
+*/
 export const links = {
-  whatsappNumero: negocio.telefone.replace("+", ""),
-  whatsapp: `https://wa.me/${negocio.telefone.replace("+", "")}`,
   cardapio: "https://instadelivery.com.br/pixpizza",
   instagram: "https://www.instagram.com/pix.pizza/",
   ifood:

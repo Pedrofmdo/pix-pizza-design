@@ -1,7 +1,6 @@
 import type { ItemCarrinho } from "@/components/carrinho/contexto";
 import {
   formatarPreco,
-  links,
   negocio,
   regras,
   type FormaPagamento,
@@ -154,8 +153,4 @@ export function montarMensagem({
   }
 
   return linhas.join("\n");
-}
-
-export function linkWhatsApp(mensagem: string) {
-  return `https://wa.me/${links.whatsappNumero}?text=${encodeURIComponent(mensagem)}`;
 }

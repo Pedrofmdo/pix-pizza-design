@@ -16,7 +16,8 @@ export function Cabecalho() {
   const { quantidadeTotal, abrir } = useCarrinho();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-tela/12 bg-sala/90 backdrop-blur">
+    /* Gruda logo abaixo da faixa de demonstração, não no topo da janela. */
+    <header className="sticky top-[var(--faixa-demo)] z-40 border-b border-tela/12 bg-sala/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-5 py-3 sm:gap-6 sm:px-8">
         <Link
           href="/"

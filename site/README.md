@@ -1,7 +1,13 @@
-# Site da Pix Pizza
+# Protótipo — Pix Pizza
 
-Site e sistema de pedidos da Pix Pizza — pizzaria em Manaíra, João Pessoa/PB.
-O cliente monta a pizza, paga no Pix e confirma no WhatsApp, tudo pelo site.
+> **Não é o site oficial da Pix Pizza**, e sim uma demonstração conceitual
+> criada por Pedro Oliveira sem autorização da pizzaria. O que mantém isso
+> explícito está listado no [README da raiz](../README.md#o-que-mantém-isto-como-demonstração)
+> — não desfaça sem autorização dela.
+
+Demonstração de site e sistema de pedidos para a Pix Pizza — pizzaria em
+Manaíra, João Pessoa/PB. O visitante monta a pizza e vê o preço na hora; o
+envio final não acontece, abre um aviso de protótipo.
 
 ## Rodar
 
@@ -41,8 +47,10 @@ ou chave aleatória. O nome do recebedor tem limite de 25 caracteres.
    pagamento, com validação e foco no primeiro campo com erro.
 4. **Pix** — o site gera o BR Code (padrão EMV do Banco Central) com o valor
    exato e um código de pedido como `txid`, mostra o QR e o copia-e-cola.
-5. **WhatsApp** — o botão final abre a conversa com o pedido inteiro já escrito:
-   itens, total, endereço, forma de pagamento e o código do pedido.
+5. **Envio** — no site real, o botão final abriria o WhatsApp com o pedido
+   inteiro já escrito. Aqui ele abre o aviso de protótipo e mostra essa mesma
+   mensagem só como demonstração: `montarMensagem` continua existindo, o que
+   sumiu foi o `linkWhatsApp` que a mandava para o número da pizzaria.
 
 O código do Pix é gerado em `src/lib/brcode.ts`. O CRC16/CCITT-FALSE foi
 conferido contra o vetor de teste padrão (`"123456789"` → `29B1`) e a estrutura
@@ -87,8 +95,9 @@ de campanha sem mexer nas cores da marca.
 
 ## Pendências para o cliente
 
-1. **Chave Pix.** Sem ela o pagamento pelo site não aparece. É o item que
-   bloqueia a publicação.
+1. **Chave Pix.** Sem ela o pagamento pelo site não aparece. Enquanto isto for
+   protótipo ela **deve continuar vazia** — só faz sentido preencher com a
+   pizzaria a bordo, e com a chave dela.
 2. **Taxa de entrega.** A pizzaria cobra por bairro e não publica a tabela, então
    o site mostra "a combinar" e fecha no WhatsApp. Se existir uma tabela, dá para
    preencher `regras.taxaEntrega`.

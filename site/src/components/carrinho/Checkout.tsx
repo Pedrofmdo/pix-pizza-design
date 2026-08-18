@@ -7,11 +7,14 @@ import { gerarBrCode } from "@/lib/brcode";
 import {
   clienteVazio,
   gerarCodigoPedido,
-  linkWhatsApp,
   montarMensagem,
   validar,
   type DadosCliente,
 } from "@/lib/pedido";
+import {
+  AvisoPrototipo,
+  BotaoPrototipo,
+} from "@/components/prototipo/BotaoPrototipo";
 import {
   formatarPreco,
   formasPagamento,
@@ -53,7 +56,7 @@ function Campo({
 }
 
 export function Checkout() {
-  const { itens, subtotal, limpar } = useCarrinho();
+  const { itens, subtotal } = useCarrinho();
   const [cliente, setCliente] = useState<DadosCliente>(() => ({
     ...clienteVazio,
     // Sem chave Pix configurada, o padrão passa a ser pagar na entrega.
@@ -66,6 +69,7 @@ export function Checkout() {
   const [pagando, setPagando] = useState(false);
   const [copiado, setCopiado] = useState(false);
   const [qr, setQr] = useState<string | null>(null);
+  const [avisando, setAvisando] = useState(false);
 
   function atualizar<K extends keyof DadosCliente>(
     chave: K,
@@ -98,7 +102,6 @@ export function Checkout() {
   }, [pagando, brcode]);
 
   const mensagem = montarMensagem({ itens, subtotal, cliente, codigo });
-  const linkZap = linkWhatsApp(mensagem);
 
   function avancar() {
     const encontrados = validar(cliente);
@@ -108,8 +111,10 @@ export function Checkout() {
       document.getElementById(primeiro)?.focus();
       return;
     }
+    // A validação e a tela de Pix continuam como estavam. Só o último passo,
+    // que abria a conversa real da pizzaria, virou o aviso de protótipo.
     if (cliente.pagamento === "pix") setPagando(true);
-    else window.open(linkZap, "_blank", "noopener");
+    else setAvisando(true);
   }
 
   async function copiarCodigo() {
@@ -173,18 +178,15 @@ export function Checkout() {
 
         <div className="mt-6 border-t border-tela/15 pt-5">
           <p className="text-sm leading-relaxed text-tela/70">
-            Depois de pagar, mande o comprovante no WhatsApp. O pedido só entra
-            na fila depois da confirmação.
+            No site real, é aqui que o comprovante seguiria para o WhatsApp da
+            pizzaria e o pedido entraria na fila.
           </p>
-          <a
-            href={linkZap}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={limpar}
+          <BotaoPrototipo
+            detalhe={mensagem}
             className="mt-4 block w-full bg-pix-fundo px-6 py-4 text-center font-display text-lg tracking-wide text-tela transition-colors hover:bg-pix"
           >
             JÁ PAGUEI — ENVIAR NO ZAP
-          </a>
+          </BotaoPrototipo>
         </div>
       </div>
     );
@@ -416,6 +418,12 @@ export function Checkout() {
             : "ENVIAR PEDIDO NO ZAP"}
         </button>
       </footer>
+
+      <AvisoPrototipo
+        aberto={avisando}
+        aoFechar={() => setAvisando(false)}
+        detalhe={mensagem}
+      />
     </div>
   );
 }

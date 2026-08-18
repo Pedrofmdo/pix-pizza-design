@@ -43,6 +43,23 @@ html {
   /* O site é escuro sempre: avisa o navegador para pintar barras de rolagem
      e controles nativos no tom certo. */
   color-scheme: dark;
+
+  /*
+    Altura da faixa de demonstração. O valor aqui é só o palpite do primeiro
+    quadro: FaixaDemo mede a faixa de verdade e sobrescreve inline, porque o
+    texto quebra em mais linhas conforme a tela estreita.
+  */
+  --faixa-demo: 2.75rem;
+}
+
+/*
+  A faixa e o cabeçalho ficam grudados no topo, um embaixo do outro, então uma
+  âncora precisa parar abaixo dos dois — senão o título da seção some atrás
+  deles. Fora de @layer de propósito: vence as utilitárias scroll-mt-* do
+  Tailwind sem depender de especificidade.
+*/
+section[id] {
+  scroll-margin-top: calc(5rem + var(--faixa-demo));
 }
 
 body {

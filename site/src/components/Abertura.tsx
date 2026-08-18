@@ -69,8 +69,8 @@ export function Abertura() {
             </h1>
 
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-tela/80">
-              Monte a sua aqui no site, pague no Pix e confirme no WhatsApp.
-              Entrega grátis acima de R$ {regras.entregaGratisAcima}.
+              Monte a sua aqui no site e veja o preço na hora. Entrega grátis
+              acima de R$ {regras.entregaGratisAcima}.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

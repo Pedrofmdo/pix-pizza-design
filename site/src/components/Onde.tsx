@@ -1,5 +1,6 @@
 import { Revelar } from "./Revelar";
 import { EstaAberto } from "./EstaAberto";
+import { BotaoPrototipo } from "./prototipo/BotaoPrototipo";
 import { enderecoCompleto, links, negocio, regras } from "@/data/pixpizza";
 
 export function Onde() {
@@ -45,13 +46,10 @@ export function Onde() {
                   </div>
                   <div className="flex justify-between gap-4">
                     <dt className="text-tela/60">WhatsApp</dt>
+                    {/* Texto, não link: num protótipo não autorizado o número
+                        da pizzaria não pode virar um toque de discagem. */}
                     <dd className="text-right font-mono tabular-nums text-tela">
-                      <a
-                        href={`tel:${negocio.telefone}`}
-                        className="transition-colors hover:text-pix"
-                      >
-                        {negocio.telefoneFormatado}
-                      </a>
+                      {negocio.telefoneFormatado}
                     </dd>
                   </div>
                   <div className="flex justify-between gap-4">
@@ -78,14 +76,9 @@ export function Onde() {
                 >
                   COMO CHEGAR
                 </a>
-                <a
-                  href={links.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 border border-tela/35 px-6 py-3.5 text-center font-display tracking-wide transition-colors hover:border-tela hover:bg-tela hover:text-sala"
-                >
+                <BotaoPrototipo className="flex-1 border border-tela/35 px-6 py-3.5 text-center font-display tracking-wide transition-colors hover:border-tela hover:bg-tela hover:text-sala">
                   CHAMAR NO ZAP
-                </a>
+                </BotaoPrototipo>
               </div>
             </div>
           </Revelar>

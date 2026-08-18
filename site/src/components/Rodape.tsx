@@ -1,8 +1,12 @@
 import { LogoPix } from "./LogoPix";
 import { enderecoCompleto, links, negocio } from "@/data/pixpizza";
 
+/*
+  Sem o WhatsApp da pizzaria: este protótipo não pode despejar pedido nenhum
+  no número dela. O que sobrou são páginas públicas da Pix Pizza, cada uma
+  claramente identificada como de terceiros ao abrir.
+*/
 const canais = [
-  { href: links.whatsapp, rotulo: "WhatsApp" },
   { href: links.instagram, rotulo: "Instagram" },
   { href: links.cardapio, rotulo: "Cardápio online" },
   { href: links.ifood, rotulo: "iFood" },
@@ -47,13 +51,9 @@ export function Rodape() {
             <h2 className="font-mono text-[11px] uppercase tracking-[0.25em] text-pix-claro">
               Atendimento
             </h2>
+            {/* Texto, não link: ver o comentário em Onde.tsx. */}
             <p className="mt-4 font-mono text-xl tabular-nums">
-              <a
-                href={`tel:${negocio.telefone}`}
-                className="transition-colors hover:text-pix"
-              >
-                {negocio.telefoneFormatado}
-              </a>
+              {negocio.telefoneFormatado}
             </p>
             <p className="mt-2 text-sm text-tela/60">
               Todos os dias
@@ -65,10 +65,20 @@ export function Rodape() {
 
         <div className="lampadas mt-12 h-2 w-full animate-lampada" aria-hidden />
 
-        <p className="mt-6 text-xs text-tela/60">
-          © {new Date().getFullYear()} {negocio.nome} · {negocio.endereco.bairro},{" "}
-          {negocio.endereco.cidade}/{negocio.endereco.estado}
-        </p>
+        {/* O © de antes dizia "© Pix Pizza", como se a pizzaria fosse dona
+            deste site. Ela não é — e é justamente o que precisa ficar claro. */}
+        <div className="mt-6 space-y-1.5 text-xs leading-relaxed text-tela/60">
+          <p className="text-amber-300/90">
+            Protótipo conceitual criado por Pedro Oliveira em{" "}
+            {new Date().getFullYear()}. Não é o site oficial da {negocio.nome} e
+            não recebe pedidos.
+          </p>
+          <p>
+            Marca, cardápio, preços e fotos pertencem à {negocio.nome} ·{" "}
+            {negocio.endereco.bairro}, {negocio.endereco.cidade}/
+            {negocio.endereco.estado}
+          </p>
+        </div>
       </div>
     </footer>
   );
