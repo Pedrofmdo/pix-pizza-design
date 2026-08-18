@@ -106,6 +106,14 @@ de campanha sem mexer nas cores da marca.
 4. **Fotos.** As imagens em `public/img/` vieram do feed público do Instagram e
    servem como provisórias — o Instagram entrega no máximo 640px. Peça os
    originais em alta.
+
+   As cinco `combo-*.jpg` são **montagem**, não foto: `scripts/gera-combos.py`
+   recorta as pizzas da `ig-8`/`ig-9` e a garrafa da `ig-8` e compõe uma imagem
+   por combo, com a quantidade certa. Foi o jeito de mostrar "3 grandes + 2 de
+   1L", que nenhuma foto do acervo mostra. Duas ressalvas honestas: o Combo
+   Pequena diz "lata" mas a imagem traz um copo (não há foto de lata), e as duas
+   garrafas do Combo 04 são a mesma foto repetida. **O certo é pedir cinco fotos
+   reais dos combos à pizzaria** — aí as montagens saem e o script vai junto.
 5. **Cardápio.** São 15 sabores no site de uma lista de mais de 80. Vale ampliar
    `sabores` em `src/data/pixpizza.ts` com os que mais vendem.
 6. **Domínio.** O site está no ar em `https://pix-pizza.vercel.app` e é para lá

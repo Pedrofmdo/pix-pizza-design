@@ -182,6 +182,14 @@ export type Combo = {
   refrigerantes: number;
   /** Volume da bebida, como aparece no cardápio deles. */
   bebida?: string;
+  /**
+   * Imagem do combo, montada a partir das fotos do feed deles por
+   * `scripts/gera-combos.py` — uma pizza para cada pizza que o combo entrega,
+   * mais as bebidas. Nenhuma foto isolada mostra a quantidade; a montagem
+   * mostra. Mexeu em `pizzas` ou `refrigerantes`? Rode o script de novo.
+   */
+  foto: string;
+  fotoAlt: string;
 };
 
 /**
@@ -198,6 +206,9 @@ export const combos: Combo[] = [
     pizzas: ["pequena"],
     refrigerantes: 1,
     bebida: "lata",
+    foto: "/img/combo-pequena-refri.jpg",
+    fotoAlt:
+      "Pizza pequena de pepperoni e o refrigerante que vem no combo",
   },
   {
     id: "combo-01",
@@ -207,6 +218,9 @@ export const combos: Combo[] = [
     pizzas: ["grande"],
     refrigerantes: 1,
     bebida: "1L",
+    foto: "/img/combo-01.jpg",
+    fotoAlt:
+      "Uma pizza grande de dois sabores e um refrigerante de 1L, o que vem no Combo 01",
   },
   {
     id: "combo-02",
@@ -216,6 +230,9 @@ export const combos: Combo[] = [
     pizzas: ["grande", "pequena"],
     refrigerantes: 1,
     bebida: "1L",
+    foto: "/img/combo-02.jpg",
+    fotoAlt:
+      "Uma pizza grande, uma pizza pequena e um refrigerante de 1L, o que vem no Combo 02",
   },
   {
     id: "combo-03",
@@ -225,6 +242,9 @@ export const combos: Combo[] = [
     pizzas: ["grande", "grande"],
     refrigerantes: 1,
     bebida: "1L",
+    foto: "/img/combo-03.jpg",
+    fotoAlt:
+      "Duas pizzas grandes e um refrigerante de 1L, o que vem no Combo 03",
   },
   {
     id: "combo-04",
@@ -234,6 +254,9 @@ export const combos: Combo[] = [
     pizzas: ["grande", "grande", "grande"],
     refrigerantes: 2,
     bebida: "1L",
+    foto: "/img/combo-04.jpg",
+    fotoAlt:
+      "Tres pizzas grandes e dois refrigerantes de 1L, o que vem no Combo 04",
   },
 ];
 
